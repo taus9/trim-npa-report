@@ -9,7 +9,7 @@ location_index = 8 # state or providence
 country_index = 9 # country
 timezone_index = 19 # what time zone(s) the area code is in
 
-def load_csv(filename):
+def load_report(filename):
   rows = []
   with open(filename, 'r') as csvfile:
     csvreader = csv.reader(csvfile)
@@ -33,7 +33,7 @@ def trim_report(report):
       new_report.append([areacode, location, country, timezone])
   return new_report
   
-npa_report = load_csv(npa_report_filename)
+npa_report = load_report(npa_report_filename)
 new_report = trim_report(npa_report)
 
 print(len(new_report))
