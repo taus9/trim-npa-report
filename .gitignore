@@ -23,4 +23,4 @@ Thumbs.db
 *.tmp
 
 # Script output
-trimmed-npa-report.csv
+trimmed_npa_report.csv
