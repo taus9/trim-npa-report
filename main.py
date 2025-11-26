@@ -22,6 +22,18 @@ def load_csv(filename):
       rows.append(row)
   return rows
   
+def trim_report(report):
+  new_report = []
+  for row in report:
+    if row[assigned_index] == 'Yes':
+      areacode = row[id_index]
+      location = row[location_index]
+      country = row[country_index]
+      timezone = row[timezone_index]
+      new_report.append([areacode, location, country, timezone])
+  return new_report
   
 npa_report = load_csv(npa_report_filename)
-print(npa_report[0])
+new_report = trim_report(npa_report)
+
+print(len(new_report))
